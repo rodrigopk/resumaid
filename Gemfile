@@ -22,6 +22,10 @@ end
 group :test do
   gem 'capybara'
   gem 'rspec'
+
+  # Codacy code coverage
+  gem 'codacy-coverage', require: false
+  gem 'simplecov', require: false
 end
 
 group :production do

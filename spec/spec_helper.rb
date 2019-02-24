@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+require 'codacy-coverage'
+
+Codacy::Reporter.start
+
 # Require this file for unit tests
 ENV['HANAMI_ENV'] ||= 'test'
 
