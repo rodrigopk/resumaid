@@ -6,13 +6,6 @@ require 'hanami/assets'
 module Web
   class Application < Hanami::Application
     configure do
-      ##
-      # BASIC
-      #
-
-      # Define the root path of this application.
-      # All paths specified in this configuration are relative to path below.
-      #
       root __dir__
 
       # Relative load paths where this application will recursively load the
@@ -25,12 +18,6 @@ module Web
         views
       ]
 
-      # Handle exceptions with HTTP statuses (true) or don't catch them (false).
-      # Defaults to true.
-      # See: http://www.rubydoc.info/gems/hanami-controller/#Exceptions_management
-      #
-      # handle_exceptions true
-
       ##
       # HTTP
       #
@@ -39,65 +26,6 @@ module Web
       # See: http://www.rubydoc.info/gems/hanami-router#Usage
       #
       routes 'config/routes'
-
-      # URI scheme used by the routing system to generate absolute URLs
-      # Defaults to "http"
-      #
-      # scheme 'https'
-
-      # URI host used by the routing system to generate absolute URLs
-      # Defaults to "localhost"
-      #
-      # host 'example.org'
-
-      # URI port used by the routing system to generate absolute URLs
-      # Argument: An object coercible to integer, defaults to 80 if the scheme
-      # is http and 443 if it's https
-      #
-      # This should only be configured if app listens to non-standard ports
-      #
-      # port 443
-
-      # Enable cookies
-      # Argument: boolean to toggle the feature
-      #           A Hash with options
-      #
-      # Options:
-      #   :domain   - The domain (String - nil by default, not required)
-      #   :path     - Restrict cookies to a relative URI
-      #               (String - nil by default)
-      #   :max_age  - Cookies expiration expressed in seconds
-      #               (Integer - nil by default)
-      #   :secure   - Restrict cookies to secure connections
-      #               (Boolean - Automatically true when using HTTPS)
-      #               See #scheme and #ssl?
-      #   :httponly - Prevent JavaScript access (Boolean - true by default)
-      #
-      # cookies true
-      # or
-      # cookies max_age: 300
-
-      # Enable sessions
-      # Argument: Symbol the Rack session adapter
-      #           A Hash with options
-      #
-      # See: http://www.rubydoc.info/gems/rack/Rack/Session/Cookie
-      #
-      # sessions :cookie, secret: ENV['WEB_SESSIONS_SECRET']
-
-      # Configure Rack middleware for this application
-      #
-      # middleware.use Rack::Protection
-
-      # Default format for the requests that don't specify an HTTP_ACCEPT header
-      # Argument: A symbol representation of a mime type, defaults to :html
-      #
-      # default_request_format :html
-
-      # Default format for responses that don't consider the request format
-      # Argument: A symbol representation of a mime type, defaults to :html
-      #
-      # default_response_format :html
 
       ##
       # TEMPLATES
@@ -169,21 +97,10 @@ module Web
       # X-Content-Type-Options prevents browsers from interpreting files as
       # something else than declared by the content type in the HTTP headers.
       #
-      # Read more at:
-      #
-      #   * https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#X-Content-Type-Options
-      #   * https://msdn.microsoft.com/en-us/library/gg622941%28v=vs.85%29.aspx
-      #   * https://blogs.msdn.microsoft.com/ie/2008/09/02/ie8-security-part-vi-beta-2-update
-      #
       security.x_content_type_options 'nosniff'
 
       # X-XSS-Protection is a HTTP header to determine the behavior of the
       # browser in case an XSS attack is detected.
-      #
-      # Read more at:
-      #
-      #   * https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
-      #   * https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#X-XSS-Protection
       #
       security.x_xss_protection '1; mode=block'
 
@@ -201,26 +118,6 @@ module Web
       #
       # Inline JavaScript is NOT allowed. To enable it, please use:
       # "script-src 'unsafe-inline'".
-      #
-      # Content Security Policy introduction:
-      #
-      #  * http://www.html5rocks.com/en/tutorials/security/content-security-policy/
-      #  * https://www.owasp.org/index.php/Content_Security_Policy
-      #  * https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29
-      #
-      # Inline and eval JavaScript risks:
-      #
-      #   * http://www.html5rocks.com/en/tutorials/security/content-security-policy/#inline-code-considered-harmful
-      #   * http://www.html5rocks.com/en/tutorials/security/content-security-policy/#eval-too
-      #
-      # Content Security Policy usage:
-      #
-      #  * http://content-security-policy.com/
-      #  * https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Using_Content_Security_Policy
-      #
-      # Content Security Policy references:
-      #
-      #  * https://developer.mozilla.org/en-US/docs/Web/Security/CSP/CSP_policy_directives
       #
       security.content_security_policy %(
         form-action 'self';
@@ -307,7 +204,6 @@ module Web
 
         # Subresource Integrity
         #
-        # See: http://hanamirb.org/guides/assets/content-delivery-network/#subresource-integrity
         subresource_integrity :sha256
       end
     end
