@@ -72,9 +72,7 @@ module Web
 
         # Specify sources for assets
         #
-        sources << [
-          'assets'
-        ]
+        sources << ['assets']
       end
 
       ##
