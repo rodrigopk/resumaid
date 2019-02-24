@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'spec_helper'
+
 RSpec.describe Web::Controllers::Home::Index, type: :action do
   let(:action) { described_class.new }
   let(:params) { Hash[] }
