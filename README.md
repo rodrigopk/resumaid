@@ -1,13 +1,13 @@
 # Resumaid
 
-Welcome to your new Hanami project!
+Resumaid app
 
 ## Setup
 
 How to run tests:
 
 ```
-% bundle exec rake
+% bundle exec rspec
 ```
 
 How to run the development console:
@@ -29,5 +29,3 @@ How to prepare (create and migrate) DB for `development` and `test` environments
 
 % HANAMI_ENV=test bundle exec hanami db prepare
 ```
-
-Explore Hanami [guides](http://hanamirb.org/guides/), [API docs](http://docs.hanamirb.org/1.3.1/), or jump in [chat](http://chat.hanamirb.org) for help. Enjoy! 🌸

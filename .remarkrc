@@ -1,6 +1,7 @@
 {
-  "plugins": [
-    "remark-preset-lint-recommended",
-    ["fenced-code-flag", {allowEmpty: true}]
-  ]
+    "plugins": {
+        "remark-lint": {
+            "fenced-code-flag": ["allowEmpty", true]
+        }
+    }
 }
